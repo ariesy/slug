@@ -13,6 +13,7 @@ import { toastStyles } from "@/styles/toast";
 const Card = (props: CardProps) => {
   const [editModal, setEditModal] = useState(false);
   const [deleteModal, setDeleteModal] = useState(false);
+  const hostname = window.location.hostname;
 
   const handleEditModal = () => {
     setEditModal(!editModal);
@@ -47,7 +48,7 @@ const Card = (props: CardProps) => {
             className="text-xl text-gray-100 transition-all hover:text-gray-300"
             target="_blank"
             rel="noreferrer"
-            href={`https://slug.vercel.app/s/${props.slug}`}
+            href={`https://${hostname}/s/${props.slug}`}
           >
             /s/{props.slug}
           </a>
@@ -55,7 +56,7 @@ const Card = (props: CardProps) => {
             icon={<BiCopy />}
             className="ml-1 p-1 text-gray-500 transition-colors duration-200 hover:text-gray-200"
             onClick={() =>
-              copyToClipboard(`https://slug.vercel.app/s/${props.slug}`)
+              copyToClipboard(`https://${hostname}/s/${props.slug}`)
             }
           />
         </div>
@@ -71,7 +72,7 @@ const Card = (props: CardProps) => {
           <DropdownItem
             icon={<BiCopy size={17} />}
             onClick={() =>
-              copyToClipboard(`https://slug.vercel.app/s/${props.slug}`)
+              copyToClipboard(`https://${hostname}/s/${props.slug}`)
             }
           >
             Copy
