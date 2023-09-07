@@ -38,7 +38,7 @@ export default {
   ],
   openGraph: {
     site_name: "slug",
-    url: "https://slug.vercel.app/",
+    url: `https://${window.location.hostname}/`,
     type: "website",
     locale: "en_IE",
     images: [

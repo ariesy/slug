@@ -21,6 +21,7 @@ const Create = () => {
   } = useForm<CreateLinkInput>();
   const [loading, setLoading] = useState(false);
   const router = useRouter();
+  const hostname = window.location.hostname;
 
   const { mutate } = trpc.links.createLink.useMutation({
     onSuccess: () => {
@@ -89,7 +90,7 @@ const Create = () => {
       </div>
       <div className="mb-5">
         <label htmlFor="slug">Custom slug:</label>
-        <p className="text-gray-500">https://slug.vercel.app/s/</p>
+        <p className="text-gray-500">https://${hostname}/s/</p>
         <div className="mt-1 flex items-center justify-between">
           <input
             id="slug"
