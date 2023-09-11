@@ -1,9 +1,10 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { prisma } from "@/server/db/client";
+import { env } from "@/env/server.mjs";
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   const { slug } = req.query;
-  const hostname = window.location.hostname;
+  const hostname = env.SITE_URL;
   if (!slug || typeof slug !== "string") {
     return res.status(400).json({
       error: "[X] Error: Missing slug? Remember that urls start like this: /u/yourLink",
