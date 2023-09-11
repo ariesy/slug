@@ -38,7 +38,7 @@ export default {
   ],
   openGraph: {
     site_name: "slug",
-    url: `https://${window.location.hostname}/`,
+    url: "https://l.zhu-kun.com/",
     type: "website",
     locale: "en_IE",
     images: [
